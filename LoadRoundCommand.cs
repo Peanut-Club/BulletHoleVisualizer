@@ -12,7 +12,8 @@ using Utf8Json;
 
 namespace NWAPIBulletHoleVisualizer
 {
-    [CommandHandler(typeof(RemoteAdminCommandHandler))]
+    //disabled !!!
+    //[CommandHandler(typeof(RemoteAdminCommandHandler))]
     public class LoadRoundCommand : ICommand
     {
         public string Command { get; } = "bvloadround";

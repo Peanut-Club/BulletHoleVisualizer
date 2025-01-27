@@ -58,10 +58,10 @@ namespace NWAPIBulletHoleVisualizer
         [PluginEvent(ServerEventType.RoundRestart)]
         public void RestartingRound()
         {
-            foreach (Player player in Utils.Visualizers.Keys)
+            foreach (ReferenceHub hub in Utils.Visualizers.Keys)
             {
 
-                if (player.GameObject.TryGetComponent(out Visualizer behaviour))
+                if (hub.gameObject.TryGetComponent(out Visualizer behaviour))
                 {
                     behaviour.Destroy();
                 }

@@ -25,17 +25,24 @@ namespace NWAPIBulletHoleVisualizer
                 response = "Not a player";
                 return false;
             }
-            Player player = Player.Get(plrSender.ReferenceHub);
-            if (Utils.IsVisualizing(player))
+            //Player player = Player.Get(plrSender.ReferenceHub);
+            if (Utils.IsVisualizing(plrSender.ReferenceHub))
             {
-                Utils.StopVisualizing(player);
+                Utils.StopVisualizing(plrSender.ReferenceHub);
                 response = "No longer visualizing";
                 return true;
             }
             else
             {
-                Utils.StartVisualizing(player, true);
+                Utils.StartVisualizing(plrSender.ReferenceHub, true);
                 response = "Now visualizing";
+                string searching = null;
+                if (arguments.Count > 0)
+                {
+                    searching = string.Join(" ", arguments);
+                    response = $"Now visualizing, with filter: '{searching}'";
+                }
+                Utils.StartVisualizing(plrSender.ReferenceHub, true, searching);
                 return true;
             }
         }

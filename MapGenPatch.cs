@@ -10,6 +10,7 @@ using static HarmonyLib.AccessTools;
 
 namespace NWAPIBulletHoleVisualizer
 {
+    /*
     [HarmonyPatch(typeof(SeedSynchronizer), nameof(SeedSynchronizer.Start))]
     public class MapGenPatch
     {
@@ -34,4 +35,5 @@ namespace NWAPIBulletHoleVisualizer
                 yield return code;
         }
     }
+    */
 }
